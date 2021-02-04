@@ -1,0 +1,67 @@
+﻿@model RetailClientApp.Models.Customer
+@{
+    ViewData["Title"] = "Customer Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header">Customer Details</div>
+                <div class="card-body">
+                    <table class="table">
+                        @if (ViewBag.Message != null)
+                        {
+                            <tr class="alert alert-warning">
+                                <td>@ViewBag.Message</td>
+                            </tr>
+                        }
+                        else
+                        {
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CustomerId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DOB)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PANno)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.CustomerId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.DOB)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.PANno)
+                                    </td>
+                                    
+                                </tr>
+                        </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

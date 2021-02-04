@@ -1,0 +1,60 @@
+﻿@model RetailClientApp.Models.ViewModel.TransactionStatusViewModel
+@{
+    ViewData["Title"] = "Transaction Status";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <h5>Transaction Status</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model != null)
+                    {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.message)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.source_balance)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.destination_balance)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.message)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.source_balance)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => modelItem.destination_balance)
+                                    </td>
+                                </tr>
+                           
+                        </tbody>
+                    </table>
+                    }
+                    else
+                    {
+                        <div class="bg-warning">
+                            <p>No any transaction status found</p>
+                        </div>
+                    }
+                </div>
+                <div class="card-footer bg-light">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

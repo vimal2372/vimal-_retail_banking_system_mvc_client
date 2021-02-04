@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RetailClientApp.Models.ViewModel.AccountViewModel>
+@{
+    ViewData["Title"] = "Customer Account Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-success">Customer Account Details</div>
+                <div class="card-body">
+                    @if (Model.Count() == 0)
+                    {
+                        <div class="alert alert-warning">
+                            <p>No any account has been associated with this customer</p>
+                        </div>
+                    }
+                    else
+                    {
+                    <div class="row">
+                        <div class="col-2">
+                            <h5>Account No.</h5>
+                        </div>
+                        <div class="col-2">
+                            <h5>Balance</h5>
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-2">
+                            
+                        </div>
+                        <div class="col-2">
+                           
+                        </div>
+                    </div>
+                    @foreach (var acc in Model)
+                    {
+                        <hr />
+                        <div class="row">
+                            <div class="col-2">
+                                <h5>@acc.Id</h5>
+                            </div>
+                            <div class="col-2">
+                                <h5>@acc.Balance</h5>
+                            </div>
+                            <div class="col-2">
+                                <a asp-action="deposit" asp-controller="Account" asp-route-id="@acc.Id" class="btn btn-success">Deposit</a>
+                            </div>
+                            <div class="col-2">
+                                <a asp-action="withdraw" asp-controller="Account" asp-route-id="@acc.Id" class="btn btn-danger">Withdraw</a>
+                            </div>
+                            <div class="col-2">
+                                <a asp-action="transferView" asp-controller="Account" asp-route-id="@acc.Id" class="btn btn-warning">Transfer</a>
+                            </div>
+                            <div class="col-2">
+                                <a asp-action="GetAccountStatementView" asp-controller="Account" asp-route-id="@acc.Id" class="btn btn-info">Account Statement</a>
+                            </div>
+                        </div>
+                    }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

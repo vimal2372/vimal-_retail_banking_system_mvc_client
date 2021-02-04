@@ -1,0 +1,41 @@
+﻿@model RetailClientApp.Models.ViewModel.GetTransferViewModel
+@{
+    ViewData["Title"] = "Transfer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <h5>Transfer Amount</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="TransferView" asp-controller="Account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @Html.HiddenFor(m => m.Source_AccountId)
+                        <div class="form-group">
+                            <label asp-for="Target_AccountId" class="control-label"></label>
+                            <input asp-for="Target_AccountId" class="form-control" />
+                            <span asp-validation-for="Target_AccountId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="amount" class="control-label"></label>
+                            <input asp-for="amount" class="form-control" />
+                            <span asp-validation-for="amount" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Transfer</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-light">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

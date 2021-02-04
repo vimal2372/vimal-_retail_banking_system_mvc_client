@@ -1,0 +1,33 @@
+﻿@model RetailClientApp.Models.ViewModel.AccountViewModel;
+@{
+    ViewData["Title"] = "GetAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header bg-success">Account Details</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>Account Id</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5>Balance</h5>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>@Model.Id</h5>
+                        </div>
+                        <div class="col-6">
+                             <h5>@Model.Balance</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

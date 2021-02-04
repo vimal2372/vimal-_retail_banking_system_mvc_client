@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Hii, <strong>@Context.Session.GetString("Username")</strong>, Your are logged in as <strong>Employee</strong></h5>
+
+

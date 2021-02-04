@@ -1,0 +1,62 @@
+﻿@model IEnumerable<RetailClientApp.Models.ViewModel.TransactionHistoryViewModel>
+
+@{
+    ViewData["Title"] = "GetTransactions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Transactions History</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.source_balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.destination_balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfTransaction)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.source_balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination_balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfTransaction)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
